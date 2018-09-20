@@ -1,12 +1,12 @@
-numList = [5,10,15,20,25,30,35,40,45,50]
+numList = [5,10,15,20,25,30,35,40,45,50] # needs to be brackets
 print(numList)
-print(len(numList)) #len is the length and then you chose what list its finding the length of
-print(numList[0])
+print(len(numList)) #len is the length/how mny charcters are in nthe list, and then you chose what list its finding the length of
+print(numList[0]) #gives you the first number in the list which is 5
 
-subList1 = numList[0:5]
+subList1 = numList[0:5] #makes a sub list that in
 print(subList1)
 subList1.append(30) # .append adds something at the end of the list
-print(subList1)
+print(subList1) #PRINTS THE SUB LIST
 
 subList2 = numList + [55]
 print(subList2)

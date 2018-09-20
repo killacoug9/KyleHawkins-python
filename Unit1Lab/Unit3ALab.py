@@ -28,14 +28,37 @@ def twonumbers():
     print(str(myNumber)+ ' is a random numb btween')
     print (str(x) + ' and ' + str(y))
 
-
 twonumbers()
 
-def boxstuff():
+
+
+def boxstuff(boxWidth, boxLength):
     boxWidth = input("box width")
     boxLength = input('box length')
     print(int(boxLength) * int(boxWidth))
+    return(boxWidth,boxLength)
 
-boxstuff()
+
+#print('pee wee wee wee pee wee omg itz me time to bee a bee le mao yo bro eating fro yo ho oooooooooooooooo')
+
+
+
+
+
+def doubleUp(list, z):
+    result = [0]*4
+    result[0] = list[0]*z
+    result[1] = list[1]*z
+    result[2] = list[2]*z
+    result[3] = list[3]*z
+    return(result)
+
+
+results = doubleUp([1,2,3,4],2)
+print(results)
+results = doubleUp(results,3)
+print(results)
+results = doubleUp(results,4)
+print(results)
 
 
