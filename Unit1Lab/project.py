@@ -1,26 +1,49 @@
-def GetGrades():
+def main():
+
     p1 = input('what is you decimal grade for period 1')
     p2 = input('what is you decimal grade for period 2')
     p3 = input('what is you decimal grade for period 3')
     p4 = input('what is you decimal grade for period 4')
+    print("its starting")#starting
     listOfGPA = [p1, p2, p3, p4]
-    GPA = calculateGrades(listOfGPA)
-    return p1
-    return p2
-    return p3
-    return p4
-    return listOfGPA
+    num = len(listOfGPA)
+    GPA = calculateGrades(listOfGPA, num)
+    print(GPA)
+ #   return GPA
+ #   return num
+    placeHolder = remarks(GPA)
 
 
-GetGrades()
-print(listOfGPA[0])
+def calculateGrades(listOfGPA,num):
+    uncalculatedGPA = float(listOfGPA[0]) + float(listOfGPA[1]) + float(listOfGPA[2]) + float(listOfGPA[3])
+    finishedMathGPA = uncalculatedGPA / num
+ #   print(finishedMathGPA)##this is printing YOUR GPA THIS IS WHAT I WANT
+
+    return finishedMathGPA
 
 
-def calculateGrades(listOfGPA):
-    uncalculatedGPA = int(listOfGPA[0]) + int(listOfGPA[1]) + int(listOfGPA[2])
+def remarks(x):
+    if float(x) == 100:
+        print("4.0 BABY")
+    elif x >= 94.5:
+        print("nice As bud")
+    elif x >= 82.5:
+        print('Bs okk')
+    elif x >= 72.5:
+        print('Cs whatever')
+    elif x >= 62.5:
+        print('Ds cmon')
+    elif x <= 62.4:
+        print('boo you suck failing classes stupid')
+
+    return x
 
 
 
 
 
-c
+
+
+
+
+main()
