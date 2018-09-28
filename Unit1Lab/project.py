@@ -33,15 +33,10 @@ def remarks(x):
         print('Cs whatever')
     elif x >= 62.5:
         print('Ds cmon')
-    elif x <= 62.4:
+    else:
         print('boo you suck failing classes stupid')
 
     return x
-
-
-
-
-
 
 
 
