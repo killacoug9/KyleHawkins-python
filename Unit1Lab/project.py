@@ -14,13 +14,12 @@ def main():
     placeHolder = remarks(GPA)
 
 
+
+
 def calculateGrades(listOfGPA,num):
     uncalculatedGPA = 0
     for zz in listOfGPA:
         uncalculatedGPA = int(zz) + int(uncalculatedGPA)
-
-
-
 
 #    if len(listOfGPA) == 4:
 #        uncalculatedGPA = float(listOfGPA[0]) + float(listOfGPA[1]) + float(listOfGPA[2]) + float(listOfGPA[3])
@@ -29,12 +28,12 @@ def calculateGrades(listOfGPA,num):
 #    elif len(listOfGPA) == 6:
 #        uncalculatedGPA = float(listOfGPA[0]) + float(listOfGPA[1]) + float(listOfGPA[2]) + float(listOfGPA[3]) + float(listOfGPA[4]) + float(listOfGPA[5])
 
-
-
     finishedMathGPA = uncalculatedGPA / num
      #   print(finishedMathGPA)##this is printing YOUR GPA THIS IS WHAT I WANT
 
     return finishedMathGPA
+
+
 
 
 def remarks(x):
