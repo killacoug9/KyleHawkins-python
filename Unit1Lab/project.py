@@ -15,12 +15,17 @@ def main():
 
 
 def calculateGrades(listOfGPA,num):
-    if len(listOfGPA) == 4:
-        uncalculatedGPA = float(listOfGPA[0]) + float(listOfGPA[1]) + float(listOfGPA[2]) + float(listOfGPA[3])
-    elif len(listOfGPA) == 5:
-        uncalculatedGPA = float(listOfGPA[0]) + float(listOfGPA[1]) + float(listOfGPA[2]) + float(listOfGPA[3]) + float(listOfGPA[4])
-    elif len(listOfGPA) == 6:
-        uncalculatedGPA = float(listOfGPA[0]) + float(listOfGPA[1]) + float(listOfGPA[2]) + float(listOfGPA[3]) + float(listOfGPA[4]) + float(listOfGPA[5])
+    for zz in listOfGPA:
+        uncalculatedGPA = zz + uncalculatedGPA
+
+
+
+#    if len(listOfGPA) == 4:
+#        uncalculatedGPA = float(listOfGPA[0]) + float(listOfGPA[1]) + float(listOfGPA[2]) + float(listOfGPA[3])
+#    elif len(listOfGPA) == 5:
+#        uncalculatedGPA = float(listOfGPA[0]) + float(listOfGPA[1]) + float(listOfGPA[2]) + float(listOfGPA[3]) + float(listOfGPA[4])
+#    elif len(listOfGPA) == 6:
+#        uncalculatedGPA = float(listOfGPA[0]) + float(listOfGPA[1]) + float(listOfGPA[2]) + float(listOfGPA[3]) + float(listOfGPA[4]) + float(listOfGPA[5])
 
 
 
