@@ -15,8 +15,10 @@ def main():
 
 
 def calculateGrades(listOfGPA,num):
+    uncalculatedGPA = 0
     for zz in listOfGPA:
-        uncalculatedGPA = zz + uncalculatedGPA
+        uncalculatedGPA = int(zz) + int(uncalculatedGPA)
+
 
 
 
@@ -30,7 +32,7 @@ def calculateGrades(listOfGPA,num):
 
 
     finishedMathGPA = uncalculatedGPA / num
- #   print(finishedMathGPA)##this is printing YOUR GPA THIS IS WHAT I WANT
+     #   print(finishedMathGPA)##this is printing YOUR GPA THIS IS WHAT I WANT
 
     return finishedMathGPA
 
