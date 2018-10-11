@@ -19,3 +19,16 @@ average = total/int(num)
 print('total ' + str(total) + ' / ' + num)
 print(average)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
