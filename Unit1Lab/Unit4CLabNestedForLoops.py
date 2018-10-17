@@ -67,4 +67,7 @@ def incTriangle(num):
              print(str(j), end='')
         print()
 
-incTriangle(10)
+incTriangle(8)
+
+#########################################
+

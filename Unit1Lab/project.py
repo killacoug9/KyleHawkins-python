@@ -42,10 +42,6 @@ def calculateGrades(listOfGPA, num, uncalculatedGPA):
     print('i just added them together')
 
 
-
-
-
-
     return uncalulatedGPA
     return listOfGPA
     return num
