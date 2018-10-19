@@ -11,19 +11,7 @@ def main():
     listOfGPA = [p1, p2, p3, p4]
     num = len(listOfGPA)
     uncalculatedGPA = 0
-    GPA = calculateGrades(listOfGPA, num, uncalculatedGPA)
-    print(GPA)
-
-
- #   return GPA
- #   return num
-    placeHolder = remarks(GPA)
-    calculateGrades(GPA)
-    remarks(x)
-
-
-
-
+    GPA = calculateGrades(listOfGPA, uncalculatedGPA)
 
 
 
@@ -34,20 +22,20 @@ def main():
 
 
 
-def calculateGrades(listOfGPA, num, uncalculatedGPA):
-
+def calculateGrades(listOfGPA, uncalculatedGPA):
+    num = len(listOfGPA)
     for zz in listOfGPA:
-        int(uncalculatedGPA = uncalculatedGPA + int(zz))
+        uncalculatedGPA = uncalculatedGPA + int(zz)
     input('puase')
     print('i just added them together')
 
 
-    return uncalulatedGPA
-    return listOfGPA
-    return num
+    finishedMathGPA = uncalculatedGPA/num
 
 
-
+    placeHolder = remarks(finishedMathGPA)
+    remarks(finishedMathGPA)
+    return finishedMathGPA
 
 #######################################################################split functions
 
@@ -70,9 +58,6 @@ def remarks(x):
         print('boo you suck failing classes stupid')
 
     return x
-
-
-
 
 
 #################################################################################################calling main
