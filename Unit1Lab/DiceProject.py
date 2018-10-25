@@ -1,17 +1,40 @@
-import random
-for x in range(1):
-  print(random.randint(1,6))
-
+from random import *
 
 
 def main():
-    decision = input('do u wanna keep going')
-    if decision == "y":
-        counter = True
-    else:
-        counter = False
+    loop = "y"
+    timesRun = 0
+    while loop == "y":
+        timesRun = timesRun + 1
+        y = findRandNum()
+        print(createDie(y))
+        print('lucky dog you got a ' + str(y))
+        loop = input('do u wanna keep going y or n')
 
-createDie()
-interactions()
 
-def createDie():
+
+
+
+
+
+
+
+
+
+def findRandNum():
+    x = randint(1,6)
+    return x
+
+
+
+
+def createDie(findRandNum):
+    topandbottom = '-------'
+    noneStar = '|      |'
+    oneStarCenter = '|  *   |'
+    oneStarRight = '|    * |'
+    twoStar = '| *  * |'
+    oneStarLeft = '| *    |'
+    dice1 = [topandbottom, noneStar,oneStarCenter, noneStar, topandbottom]
+    print(dice1)
+main()
