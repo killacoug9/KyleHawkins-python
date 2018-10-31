@@ -5,6 +5,7 @@ def main():
     loop = "y"
     timesRun = 0
 
+
     while loop == "y":
 
         timesRun = timesRun + 1
@@ -13,6 +14,21 @@ def main():
         print('lucky dog you got a ' + str(y))
         print('youve run it ' + str(timesRun) + ' times')
         loop = input('do u wanna keep going y or n')
+
+
+    diceList = createDie(findRandNum)
+    makeDice(diceList)
+
+
+
+
+def makeDice(diceList):
+    #print(diceList)
+
+    for i in range(0, len(diceList[0])):
+
+        for sublist in diceList:
+            print(sublist[0])
 
 
 
@@ -35,33 +51,39 @@ def createDie(findRandNum):
     oneStarRight = '|    * |'
     twoStar = '| *  * |'
     oneStarLeft = '| *    |'
-    diceNumber1 = ['']
+    dice1 = ''
+    dice2 =''
+    dice3 =''
+    dice4=''
+    dice5=''
+    dice6=''
     if findRandNum == 1:
-        diceNumber1 = [topandbottom, noneStar, oneStarCenter, noneStar, topandbottom]
+        dice1 = [topandbottom, noneStar, oneStarCenter, noneStar, topandbottom]
     elif findRandNum == 2:
-        diceNumber1 = [topandbottom,noneStar,twoStar,noneStar,topandbottom]
+        dice2 = [topandbottom,noneStar,twoStar,noneStar,topandbottom]
     elif findRandNum == 3:
-        diceNumber1 = [topandbottom,oneStarLeft,oneStarCenter,oneStarRight, topandbottom]
+        dice3 = [topandbottom,oneStarLeft,oneStarCenter,oneStarRight, topandbottom]
     elif findRandNum == 4:
-        diceNumber1 = [topandbottom, twoStar, noneStar, twoStar,topandbottom]
+        dice4 = [topandbottom, twoStar, noneStar, twoStar,topandbottom]
     elif findRandNum == 5:
-        diceNumber1 = [topandbottom, twoStar, oneStarCenter, twoStar, topandbottom]
+        dice5 = [topandbottom, twoStar, oneStarCenter, twoStar, topandbottom]
     elif findRandNum == 6:
-        diceNumber1 = [ topandbottom, twoStar, twoStar, twoStar,topandbottom]
-
-    firstplace = diceNumber1
-
-    for LinesToPrint in firstplace:
-        print(LinesToPrint)
+        dice6 = [ topandbottom, twoStar, twoStar, twoStar,topandbottom]
 
 
+    dice1 = [topandbottom, noneStar, oneStarCenter, noneStar, topandbottom]
+    dice2 = [topandbottom,noneStar,twoStar,noneStar,topandbottom]
+    dice3 = [topandbottom,oneStarLeft,oneStarCenter,oneStarRight, topandbottom]
+    dice4 = [topandbottom, twoStar, noneStar, twoStar,topandbottom]
+    dice5 = [topandbottom, twoStar, oneStarCenter, twoStar, topandbottom]
+    dice6 = [ topandbottom, twoStar, twoStar, twoStar,topandbottom]
 
-    # one = [topandbottom, noneStar, oneStarCenter, noneStar, topandbottom]
-    # two = [topandbottom,noneStar,twoStar,noneStar,topandbottom]
-    # three = [topandbottom,oneStarLeft,oneStarCenter,oneStarRight, topandbottom]
-    # four = [topandbottom, twoStar, noneStar, twoStar,topandbottom]
-    # five = [topandbottom, twoStar, oneStarCenter, twoStar, topandbottom]
-    # six = [ topandbottom, twoStar, twoStar, twoStar,topandbottom]
+
+    diceList = [dice1, dice2, dice3, dice4, dice5,dice6]
+
+    return diceList
+
+
 
 
 
