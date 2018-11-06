@@ -1,49 +1,37 @@
 from random import *
-
+DICENUM = int(input('how many nums'))
 
 def main():
     loop = "y"
     timesRun = 0
-    bigList = []
+    diceList = [0]*6
+    diceList = createDie()
 
 
     while loop == "y":
 
-        timesRun = timesRun + 1
+        bigList = [0]*DICENUM
+        timesRun += 1
 
-        Rnum1 = findRandNum()
-        diceList = createDie(Rnum1)
-        timesnum = input('how many die')
 
-        for z in range(0, int(timesnum)):
-            bigList.append(diceList[roll()])
+
+
+        for z in range(0, DICENUM):
+            rolling = findRandNum()
+
+            bigList[z] = (diceList[rolling])
+
+
+
+
 
         makeDice(bigList)
-
-
-
-        print('lucky dog you got a ' + str(Rnum1))
-        print('youve run it ' + str(timesRun) + ' times')
         loop = input('do u wanna keep going y or n')
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def findRandNum():
-    Rnum1 = randint(1,6)
+    Rnum1 = randint(0,5)
 
     return Rnum1
 
@@ -53,7 +41,7 @@ def findRandNum():
 
 
 
-def createDie(findRandNum):
+def createDie():
 
     topandbottom = '--------'
     noneStar = '|      |'
@@ -61,19 +49,21 @@ def createDie(findRandNum):
     oneStarRight = '|    * |'
     twoStar = '| *  * |'
     oneStarLeft = '| *    |'
-    diceList = []
+    diceList = [0]*6
+    for num in range(0,6):
+        if num == 0:
+            diceList[num] = [topandbottom, noneStar, oneStarCenter, noneStar, topandbottom]
+        elif num == 1:
+            diceList[num] = [topandbottom,noneStar,twoStar,noneStar,topandbottom]
+        elif num == 2:
+            diceList[num] = [topandbottom,oneStarLeft,oneStarCenter,oneStarRight, topandbottom]
+        elif num == 3:
+            diceList[num] = [topandbottom, twoStar, noneStar, twoStar,topandbottom]
+        elif num == 4:
+            diceList[num] = [topandbottom, twoStar, oneStarCenter, twoStar, topandbottom]
+        elif num == 5:
+            diceList[num] = [ topandbottom, twoStar, twoStar, twoStar,topandbottom]
 
-    diceList.append([topandbottom, noneStar, oneStarCenter, noneStar, topandbottom])
-
-    diceList.append([topandbottom,noneStar,twoStar,noneStar,topandbottom])
-
-    diceList.append([topandbottom,oneStarLeft,oneStarCenter,oneStarRight, topandbottom])
-
-    diceList.append([topandbottom, twoStar, noneStar, twoStar,topandbottom])
-
-    diceList.append([topandbottom, twoStar, oneStarCenter, twoStar, topandbottom])
-
-    diceList.append([ topandbottom, twoStar, twoStar, twoStar,topandbottom])
 
 
 
@@ -81,7 +71,7 @@ def createDie(findRandNum):
     return diceList
 
 def makeDice(diceList):
-    #print(diceList)
+
 
     for row in range(0, len(diceList[0])):
         for col in range(0,len(diceList)):
