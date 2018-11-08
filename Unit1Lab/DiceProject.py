@@ -1,7 +1,8 @@
 from random import *
-DICENUM = int(input('how many nums'))
+
 
 def main():
+
     loop = "y"
     timesRun = 0
     diceList = [0]*6
@@ -9,7 +10,7 @@ def main():
 
 
     while loop == "y":
-
+        DICENUM = int(input('how many nums'))
         bigList = [0]*DICENUM
         timesRun += 1
 
