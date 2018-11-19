@@ -111,6 +111,12 @@ def adv():
         pen.right(abs(float(angle)))
 
 def space():
+    pen.clear()
+    t.setup(800,800)
+    pen.up()
+    pen.goto(0,0)
+    pen.down()
+
 
 
 
