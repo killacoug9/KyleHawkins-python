@@ -1,4 +1,5 @@
 import turtle as t
+import random
 pen = t.Pen()
 t.bgcolor('grey')
 
@@ -9,6 +10,7 @@ def main():
     triangle()
     pen.clear()
     adv()
+    space()
 
 def line():
     t.colormode(255)
@@ -58,15 +60,57 @@ def adv():
     pen.goto(0,0)
     pen.down()
 
+    # colorType = input('what color type rgb or normal, random')
+    # useRGB = False
+    #
+    # if colorType == 'rgb':
+    #     useRGB = True
+    # else:
+    #     useRGB = False
+    #
+    #
+    # if colorType == 'normal':
+    #     colorChoice = input('what color')
+    #
+    # if useRGB == True:
+    #     colorS1 = input('enter 1st rbg value')
+    #     colorS2 = input('second rbg value')
+    #     colorS3 = input('3rd rgb value')
+    #     colorUse = pen.color(colorS1, colorS2, colorS3)
+    # else:
+    #     colorUse = pen.color(colorChoice)
+    #
+    # if colorType == 'random':
+    #     colorUse = pen.color(random.randint(0,255), random.randint(0,255), random.randint(0,255))
+    #
     sides = input('how many sides')
     length = input('how long ')
     pen.left(90)
 
-    angle = 180*(float(sides)-2)/float(sides)
 
-    for x in range(0, int(sides)):
-        pen.forward(float(length))
-        pen.right(float(angle))
+    if abs(int(sides)) < 3:
+        print('wow i know what youre doing') #counter for too little sides
+        sides = random.randint(3, 20)
+
+    if abs(int(length)) > 200:
+        print('hey thats too long')
+        length = random.randint(50, 200) # counter for too long
+
+    if abs(int(sides)) > 20:
+        print('no more than 20 sides') #counter for too many
+        sides = random.randint(3, 20)
+
+
+    angle = 360/abs((float(sides)))
+
+    for x in range(0, abs(int(sides))):
+        #colorUse
+
+        pen.color(random.randint(0,255), random.randint(0,255), random.randint(0,255))
+        pen.forward(abs(float(length)))
+        pen.right(abs(float(angle)))
+
+def space():
 
 
 
