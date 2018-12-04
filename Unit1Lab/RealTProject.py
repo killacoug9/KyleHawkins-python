@@ -110,7 +110,7 @@ def adv():
     for x in range(0, abs(int(sides))):
         #colorUse
 
-        pen.color(random.randint(0,255), random.randint(0,255), random.randint(0,255))
+        pen.color(random.randint(0,255), random.randint(0+20,255), random.randint(0,255))
         pen.forward(abs(float(length)))
         pen.right(abs(float(angle)))
 
