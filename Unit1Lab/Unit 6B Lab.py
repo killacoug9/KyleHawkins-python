@@ -34,7 +34,7 @@ def findMonth():
     if BMonth in weekends:
         BDay = input('what is the day')
         if BDay in weekends[BMonth]:
-            print('oh cool')
+            print('oh coo')
 
 
 
