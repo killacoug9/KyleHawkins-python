@@ -35,6 +35,8 @@ def findMonth():
         BDay = input('what is the day')
         if BDay in weekends[BMonth]:
             print('oh coo')
+    else:
+        print('sorry i cant find that month')
 
 
 
