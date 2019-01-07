@@ -1,21 +1,27 @@
-import Unit
+import pygame as pg
+draw = pg.draw
+import base_game as bg
 
-d = c.pet('13', 'Leo', 'Golden Retriever')
-print(c.pet.what(d))
-print(c.pet.getName(d))
-print(c.pet.getBreed(d) + '\n')
+# Start PyGame system
+pg.init()
 
-g = c.pet('7', 'insert cat name', 'some cat breed idk any')
-print(c.pet.getName(g))
-print(c.pet.getBreed(g))
-print(c.pet.what(g) + '\n')
+# Create a screen with dimensions
+screen = pg.display.set_mode([600, 800])
 
-h = c.cage('Snake', 'True')
-print(c.cage.getBreed(h))
-print(c.cage.getDanger(h))
-print(c.cage.what(h) + '\n')
+# Helper variables
+is_running = True
+GREEN = (0, 255, 0)
+radius = 50
 
-j = c.cage('Rat', 'False')
-print(c.cage.getBreed(j))
-print(c.cage.getDanger(j))
-print(c.cage.what(j))
+while is_running:
+
+    for event in pg.event.get():
+        if event.type == pg.QUIT:
+            is_running = False
+         ###################################
+
+    draw.rect(screen, GREEN, (100, 100))
+    pg.display.update()
+
+pg.quit()
+
