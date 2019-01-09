@@ -88,7 +88,7 @@ def adv():
     pen.left(90)
 
     sides = 12
-    length=100
+    length = 100
 
 
 
@@ -155,6 +155,7 @@ def space():
         pen.color(random.randint(0,255), random.randint(0,255), random.randint(0,255))
         pen.forward(abs(float(length)))
         pen.right(abs(float(angle)))
+
 ####################################################################################
 #triangle top right
     for x in range(0, 3):
