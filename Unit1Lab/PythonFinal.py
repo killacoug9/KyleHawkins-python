@@ -2,10 +2,19 @@ import turtle as t
 import random
 pen = t.Pen()
 t.bgcolor('white')
-t.colormode(255)
+t.tracer(0,0)
+
+# def clearT():
+#     print('\n'*13)
+
+input('press enter for rules')
+print('In my game you will be able to chose different shapes, colors, sizes, etc. \n there are 3 different preset. advanced is the rossete,\n polygon you get to choose the size shape and color of a polygon,\n and foursquare is the foursquare project \n')
+
+
+
 
 #shift F10 to run
-
+#this is main
 def main():
     BackGround()
     chooseGame()
@@ -22,41 +31,47 @@ def BackGround():
 
 #this is how to chose color options
 
-colorType = input('what color type, rgb, normal, random \n if its rgb you can choose the rgb values, if its normal u just type in a basic color, if its random then itll chose a random rgb color')##
+colorType = input('what color type..rgb, normal, random \n if its rgb you can choose the rgb values, if its normal u just type in a basic color, if its random then itll chose a random rgb color')##
 useRGB = False
 
 if colorType == 'rgb':
     useRGB = True
-else:
-    useRGB = False
-
-if colorType == 'normal':
+    t.colormode(255)
+elif colorType == 'normal':
     colorUse = input('what color')
 
+elif colorType == 'random':
+    t.colormode(255)
+    colorUse = (random.randint(0,255), random.randint(0,255), random.randint(0,255))
+else:
+    print('i didnt understand your input, ill just use random color')
+    t.colormode(255)
+    colorUse = (random.randint(0,255), random.randint(0,255), random.randint(0,255))
 
 if useRGB == True:
-
+    t.colormode(255)
     colorS1 = int(input('enter 1st rbg value'))
     colorS2 = int(input('second rbg value'))
     colorS3 = int(input('3rd rgb value'))
-    colorUse = pen.color(colorS1, colorS2, colorS3)
-
-if colorType == 'random':
-    input('puase before random')
-    colorUse = pen.color(random.randint(0,255), random.randint(0,255), random.randint(0,255))
+    colorUse = (colorS1, colorS2, colorS3)
 
 
-colorUse
+
+
+pen.color(colorUse)
+
+
+
 
 ###################################
-
+#this holds game choices
 def chooseGame():
     whatGame = input('what images to see options are \n fourbox \n polygon \n advanced')
 
     if whatGame == 'fourbox':
         FourBoxShapes()
 
-    elif whatGame == 'adv':
+    elif whatGame == 'advanced':
         advanced()
 
     elif whatGame == 'polygon':
@@ -110,26 +125,41 @@ def makeOwnPoly():
 
 
 def advanced():
+    t.colormode(255)
+    print('this is a little beefy so it make take a second to load, be patient')
+    SL = input('length between 5 and 30')
+    #CL = input('length between 5 and 30')
 
+    AdvChoice = input('do you want more inputs for the rosette. yes or no. i recomend no')
+    if AdvChoice == 'yes':
+        SL2 = input('length between about 100-300')
+        #SL3 = input('length between about 100-500')
+
+        CL2 = input('length between about 100-300')
+        #CL3 = input('length between about 100-500')
+    elif AdvChoice == 'no':
+        print('good choice')
+        SL2 = 300
+        CL2 = 300
 
 
     def drawSquare(length):
 
         for i in range(4):
-            pen.color(random.randint(0,255), random.randint(0,255), random.randint(0,255))
+            pen.color(random.randint(0,255), random.randint(0,255), random.randint(0,255))#change these to colorUse...
             pen.forward(length)
             pen.right(90)
 
-        for i in range(60):
-            pen.color(random.randint(0,255), random.randint(0,255), random.randint(0,255))
-            drawSquare(300)
-            pen.right(9)
+    for i in range(60):
+        pen.color(random.randint(0,255), random.randint(0,255), random.randint(0,255))
+        drawSquare(int(SL2))
+        pen.right(9)
 
-        for i in range(750):
-            pen.color(random.randint(0,255), random.randint(0,255), random.randint(0,255))
-            drawSquare(random.randint(100, 200))
-            drawSquare(150)
-            pen.right(25)
+    # for i in range(750):
+    #     pen.color(random.randint(0,255), random.randint(0,255), random.randint(0,255))
+    #     drawSquare(random.randint(100, 200))
+    #     drawSquare(150)
+    #     pen.right(25)
 
     def drawCircle(length):
 
@@ -138,18 +168,19 @@ def advanced():
             pen.circle(length)
             pen.right(75)
 
-        for i in range(60):
-            #pen.color(random.randint(0,255), random.randint(0,255), random.randint(0,255))
-            drawCircle(300)
-            pen.right(9)
+    for i in range(60):
+        #pen.color(random.randint(0,255), random.randint(0,255), random.randint(0,255))
+        drawCircle(int(CL2))
+        pen.right(9)
 
-        for i in range(750):
-            #pen.color(random.randint(0,255), random.randint(0,255), random.randint(0,255))
-            drawSquare(random.randint(100, 200))
-            drawCircle(150)
-            pen.right(25)
-    drawSquare()
-    drawCircle()
+    # for i in range(750):
+    #     #pen.color(random.randint(0,255), random.randint(0,255), random.randint(0,255))
+    #     drawSquare(random.randint(100, 200))
+    #     drawCircle(150)
+    #     pen.right(25)
+
+    drawSquare(length=int(SL))
+    drawCircle(length=int(SL))
 
 
 
@@ -160,7 +191,7 @@ def advanced():
 #This is one of the pre set games for four square which is tri circle, square, and multi side in four corners of screen
 
 def FourBoxShapes():
-
+    t.colormode(255)
 
 #     pen.clear()
     #t.setup(800,800)
@@ -298,10 +329,12 @@ def FourBoxShapes():
 
 
 
+
 ##############################
 
 
 
 main()
-t.exitonclick()
 t.update()
+t.exitonclick()
+
