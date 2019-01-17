@@ -1,14 +1,23 @@
 import turtle as t
 import random
+t.setup(800,800)#remove if necesarry
 pen = t.Pen()
 t.bgcolor('white')
 t.tracer(0,0)
+s = t.Screen()
 
 # def clearT():
 #     print('\n'*13)
 
 input('press enter for rules')
 print('In my game you will be able to chose different shapes, colors, sizes, etc. \n there are 3 different preset. advanced is the rossete,\n polygon you get to choose the size shape and color of a polygon,\n and foursquare is the foursquare project \n')
+#
+
+#
+# image = 'chung8.gif'
+# #s.addshape(image)
+# # t.shape(image)
+# s.bgpic('chung8.gif')
 
 
 
@@ -25,8 +34,16 @@ def main():
 
 #choose the background color
 def BackGround():
-    BackgroundColor = input('what color for background')
-    t.bgcolor(BackgroundColor)
+    BackgroundColor = input('what color for background. just choose like white, blue, grey, black, chungus, sans, simple stuff')
+    if BackgroundColor == 'chungus':
+        #image = 'chung8.gif'
+        s.bgpic('chung8.gif')
+    elif BackgroundColor == 'sans':
+        s.bgpic('sans8.gif')
+    else:
+        t.bgcolor(BackgroundColor)
+
+
 
 
 #this is how to chose color options
@@ -141,6 +158,9 @@ def advanced():
         print('good choice')
         SL2 = 300
         CL2 = 300
+    #wantBeef = input('want beefy rossete')
+
+
 
 
     def drawSquare(length):
